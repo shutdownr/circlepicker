@@ -51,7 +51,7 @@ class ViewController: UIViewController, CirclePickerDelegate, CirclePickerDataSo
         let icon6 = UIImage(named: "rocket.png")!
         let icon7 = UIImage(named: "star.png")!
         let icon8 = UIImage(named: "wifi.png")!
-
+        
         
         images = [image1,image2,image3,image4,image5,image6,image7,image8]
         currentImages = Array(images!.prefix(numberCtrl.selectedSegmentIndex+1))
@@ -64,6 +64,7 @@ class ViewController: UIViewController, CirclePickerDelegate, CirclePickerDataSo
         picker.attachToView(view)
         
         picker.resizeImages = false
+        picker.topView = centerLabel
         
     }
     @IBAction func segmentSelected(_ sender: UISegmentedControl)
@@ -80,7 +81,7 @@ class ViewController: UIViewController, CirclePickerDelegate, CirclePickerDataSo
     {
         picker.resizeImages = sender.isOn
     }
-
+    
     @IBAction func animationSelected(_ sender: UISegmentedControl)
     {
         switch sender.selectedSegmentIndex

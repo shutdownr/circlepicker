@@ -40,6 +40,14 @@ class CirclePicker: UIView {
     var animationDuration = 0.4
     // bool, that indicates whether the images should be scaled to fit inside the circles or not
     var resizeImages = true
+    // The subject of change for the picker. Moved on top of the picker when displayed
+    var topView: UIView?
+    {
+        didSet
+        {
+            topViewOrigin = topView?.frame.origin
+        }
+    }
     
     // Private members
     
@@ -47,6 +55,7 @@ class CirclePicker: UIView {
     private var gesture: UILongPressGestureRecognizer!
     private var view: UIView?
     private var middle: CGPoint!
+    private var topViewOrigin : CGPoint?
     
     // Initializers
     init()
@@ -54,7 +63,7 @@ class CirclePicker: UIView {
         super.init(frame:CGRect(x: 0, y: 0, width: 0, height: 0))
         circlePickerInit()
     }
-
+    
     override init(frame: CGRect)
     {
         super.init(frame: frame)
@@ -75,7 +84,7 @@ class CirclePicker: UIView {
         
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight,.flexibleWidth]
-    
+        
     }
     
     // Public functions
@@ -107,14 +116,21 @@ class CirclePicker: UIView {
             view?.addSubview(self)
             createImageViews()
         }
-        // Called on every touch between start and end of the long-press
+            // Called on every touch between start and end of the long-press
         else if(gesture.state == .changed)
         {
             cellTouched(gesture.location(in: view))
         }
-        // Touch has ended. Remove the picker and reset it.
+            // Touch has ended. Remove the picker and reset it.
         else if(gesture.state == .ended)
         {
+            // TopView was set. Reset the translation
+            if let v = topView
+            {
+                UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {
+                    v.transform = CGAffineTransform.identity
+                }, completion: nil)
+            }
             if let index = selectedCellIndex
             {
                 delegate?.circlePicker?(self, didEndSelectionAt: index)
@@ -139,11 +155,22 @@ class CirclePicker: UIView {
         {
             imageViews = []
             
-           
+            
             // The point for creating the images doesn't matter at all
             // The bezierPath will specify the exact position of the image later on
             let point = CGPoint(x: 0, y: 0)
             let rect = CGRect(origin: point, size: CGSize(width: cellSize, height: cellSize))
+            
+            // TopView is set -> Move it above the picker
+            if let v = topView
+            {
+                UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {
+                    
+                    let dx = self.middle.x - self.topViewOrigin!.x - self.topView!.frame.width/2
+                    let dy = self.middle.y - self.topViewOrigin!.y - self.cellSize*2
+                    v.transform = CGAffineTransform(translationX: dx, y: dy)
+                }, completion: nil)
+            }
             
             for index in 0..<data.numberOfCells(in: self)
             {
@@ -207,7 +234,7 @@ class CirclePicker: UIView {
             var x = CGFloat(0)
             var y = CGFloat(0)
             let radius = CGFloat(contentView.frame.width + CGFloat(1.1)*cellSize)
-
+            
             x = radius * CGFloat(sin(degreeToRadians(angle)))
             y = -radius * CGFloat(cos(degreeToRadians(angle)))
             
