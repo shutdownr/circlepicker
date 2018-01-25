@@ -1,0 +1,615 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		225D283D2012516A00FF48D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D283C2012516A00FF48D4 /* AppDelegate.swift */; };
+		225D283F2012516A00FF48D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D283E2012516A00FF48D4 /* ViewController.swift */; };
+		225D28422012516A00FF48D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 225D28402012516A00FF48D4 /* Main.storyboard */; };
+		225D28442012516A00FF48D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 225D28432012516A00FF48D4 /* Assets.xcassets */; };
+		225D28472012516A00FF48D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 225D28452012516A00FF48D4 /* LaunchScreen.storyboard */; };
+		225D28522012516A00FF48D4 /* CirclePickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D28512012516A00FF48D4 /* CirclePickerTests.swift */; };
+		225D285D2012516A00FF48D4 /* CirclePickerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D285C2012516A00FF48D4 /* CirclePickerUITests.swift */; };
+		225D286B2012518600FF48D4 /* CirclePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D286A2012518600FF48D4 /* CirclePicker.swift */; };
+		225D286D2012519F00FF48D4 /* CirclePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 225D286C2012519F00FF48D4 /* CirclePicker.xib */; };
+		225D286F2012553500FF48D4 /* background_grey.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 225D286E2012553500FF48D4 /* background_grey.jpg */; };
+		225D28712013788E00FF48D4 /* CirclePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D28702013788E00FF48D4 /* CirclePickerDelegate.swift */; };
+		2260125B20175C2C00E52A53 /* music.png in Resources */ = {isa = PBXBuildFile; fileRef = 2260125320175C2B00E52A53 /* music.png */; };
+		2260125C20175C2C00E52A53 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 2260125420175C2B00E52A53 /* star.png */; };
+		2260125D20175C2C00E52A53 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 2260125520175C2B00E52A53 /* heart.png */; };
+		2260125E20175C2C00E52A53 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 2260125620175C2C00E52A53 /* home.png */; };
+		2260125F20175C2C00E52A53 /* wifi.png in Resources */ = {isa = PBXBuildFile; fileRef = 2260125720175C2C00E52A53 /* wifi.png */; };
+		2260126020175C2C00E52A53 /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = 2260125820175C2C00E52A53 /* clock.png */; };
+		2260126120175C2C00E52A53 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 2260125920175C2C00E52A53 /* camera.png */; };
+		2260126220175C2C00E52A53 /* rocket.png in Resources */ = {isa = PBXBuildFile; fileRef = 2260125A20175C2C00E52A53 /* rocket.png */; };
+		22FFC70A2016665100136508 /* CirclePickerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FFC7092016665100136508 /* CirclePickerDataSource.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		225D284E2012516A00FF48D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 225D28312012516A00FF48D4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 225D28382012516A00FF48D4;
+			remoteInfo = CirclePicker;
+		};
+		225D28592012516A00FF48D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 225D28312012516A00FF48D4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 225D28382012516A00FF48D4;
+			remoteInfo = CirclePicker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		225D28392012516A00FF48D4 /* CirclePicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CirclePicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		225D283C2012516A00FF48D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		225D283E2012516A00FF48D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		225D28412012516A00FF48D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		225D28432012516A00FF48D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		225D28462012516A00FF48D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		225D28482012516A00FF48D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		225D284D2012516A00FF48D4 /* CirclePickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CirclePickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		225D28512012516A00FF48D4 /* CirclePickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclePickerTests.swift; sourceTree = "<group>"; };
+		225D28532012516A00FF48D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		225D28582012516A00FF48D4 /* CirclePickerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CirclePickerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		225D285C2012516A00FF48D4 /* CirclePickerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclePickerUITests.swift; sourceTree = "<group>"; };
+		225D285E2012516A00FF48D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		225D286A2012518600FF48D4 /* CirclePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclePicker.swift; sourceTree = "<group>"; };
+		225D286C2012519F00FF48D4 /* CirclePicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CirclePicker.xib; sourceTree = "<group>"; };
+		225D286E2012553500FF48D4 /* background_grey.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background_grey.jpg; sourceTree = "<group>"; };
+		225D28702013788E00FF48D4 /* CirclePickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclePickerDelegate.swift; sourceTree = "<group>"; };
+		2260125320175C2B00E52A53 /* music.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = music.png; sourceTree = "<group>"; };
+		2260125420175C2B00E52A53 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		2260125520175C2B00E52A53 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
+		2260125620175C2C00E52A53 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
+		2260125720175C2C00E52A53 /* wifi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wifi.png; sourceTree = "<group>"; };
+		2260125820175C2C00E52A53 /* clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clock.png; sourceTree = "<group>"; };
+		2260125920175C2C00E52A53 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		2260125A20175C2C00E52A53 /* rocket.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rocket.png; sourceTree = "<group>"; };
+		22FFC7092016665100136508 /* CirclePickerDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclePickerDataSource.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		225D28362012516A00FF48D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		225D284A2012516A00FF48D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		225D28552012516A00FF48D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		225D28302012516A00FF48D4 = {
+			isa = PBXGroup;
+			children = (
+				225D283B2012516A00FF48D4 /* CirclePicker */,
+				225D28502012516A00FF48D4 /* CirclePickerTests */,
+				225D285B2012516A00FF48D4 /* CirclePickerUITests */,
+				225D283A2012516A00FF48D4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		225D283A2012516A00FF48D4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				225D28392012516A00FF48D4 /* CirclePicker.app */,
+				225D284D2012516A00FF48D4 /* CirclePickerTests.xctest */,
+				225D28582012516A00FF48D4 /* CirclePickerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		225D283B2012516A00FF48D4 /* CirclePicker */ = {
+			isa = PBXGroup;
+			children = (
+				225D283C2012516A00FF48D4 /* AppDelegate.swift */,
+				225D283E2012516A00FF48D4 /* ViewController.swift */,
+				225D28702013788E00FF48D4 /* CirclePickerDelegate.swift */,
+				225D286A2012518600FF48D4 /* CirclePicker.swift */,
+				22FFC7092016665100136508 /* CirclePickerDataSource.swift */,
+				225D28402012516A00FF48D4 /* Main.storyboard */,
+				225D286C2012519F00FF48D4 /* CirclePicker.xib */,
+				225D286E2012553500FF48D4 /* background_grey.jpg */,
+				2260125920175C2C00E52A53 /* camera.png */,
+				2260125820175C2C00E52A53 /* clock.png */,
+				2260125520175C2B00E52A53 /* heart.png */,
+				2260125620175C2C00E52A53 /* home.png */,
+				2260125320175C2B00E52A53 /* music.png */,
+				2260125A20175C2C00E52A53 /* rocket.png */,
+				2260125420175C2B00E52A53 /* star.png */,
+				2260125720175C2C00E52A53 /* wifi.png */,
+				225D28432012516A00FF48D4 /* Assets.xcassets */,
+				225D28452012516A00FF48D4 /* LaunchScreen.storyboard */,
+				225D28482012516A00FF48D4 /* Info.plist */,
+			);
+			path = CirclePicker;
+			sourceTree = "<group>";
+		};
+		225D28502012516A00FF48D4 /* CirclePickerTests */ = {
+			isa = PBXGroup;
+			children = (
+				225D28512012516A00FF48D4 /* CirclePickerTests.swift */,
+				225D28532012516A00FF48D4 /* Info.plist */,
+			);
+			path = CirclePickerTests;
+			sourceTree = "<group>";
+		};
+		225D285B2012516A00FF48D4 /* CirclePickerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				225D285C2012516A00FF48D4 /* CirclePickerUITests.swift */,
+				225D285E2012516A00FF48D4 /* Info.plist */,
+			);
+			path = CirclePickerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		225D28382012516A00FF48D4 /* CirclePicker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 225D28612012516A00FF48D4 /* Build configuration list for PBXNativeTarget "CirclePicker" */;
+			buildPhases = (
+				225D28352012516A00FF48D4 /* Sources */,
+				225D28362012516A00FF48D4 /* Frameworks */,
+				225D28372012516A00FF48D4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CirclePicker;
+			productName = CirclePicker;
+			productReference = 225D28392012516A00FF48D4 /* CirclePicker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		225D284C2012516A00FF48D4 /* CirclePickerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 225D28642012516A00FF48D4 /* Build configuration list for PBXNativeTarget "CirclePickerTests" */;
+			buildPhases = (
+				225D28492012516A00FF48D4 /* Sources */,
+				225D284A2012516A00FF48D4 /* Frameworks */,
+				225D284B2012516A00FF48D4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				225D284F2012516A00FF48D4 /* PBXTargetDependency */,
+			);
+			name = CirclePickerTests;
+			productName = CirclePickerTests;
+			productReference = 225D284D2012516A00FF48D4 /* CirclePickerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		225D28572012516A00FF48D4 /* CirclePickerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 225D28672012516A00FF48D4 /* Build configuration list for PBXNativeTarget "CirclePickerUITests" */;
+			buildPhases = (
+				225D28542012516A00FF48D4 /* Sources */,
+				225D28552012516A00FF48D4 /* Frameworks */,
+				225D28562012516A00FF48D4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				225D285A2012516A00FF48D4 /* PBXTargetDependency */,
+			);
+			name = CirclePickerUITests;
+			productName = CirclePickerUITests;
+			productReference = 225D28582012516A00FF48D4 /* CirclePickerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		225D28312012516A00FF48D4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Tim Kreuzer";
+				TargetAttributes = {
+					225D28382012516A00FF48D4 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					225D284C2012516A00FF48D4 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 225D28382012516A00FF48D4;
+					};
+					225D28572012516A00FF48D4 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 225D28382012516A00FF48D4;
+					};
+				};
+			};
+			buildConfigurationList = 225D28342012516A00FF48D4 /* Build configuration list for PBXProject "CirclePicker" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 225D28302012516A00FF48D4;
+			productRefGroup = 225D283A2012516A00FF48D4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				225D28382012516A00FF48D4 /* CirclePicker */,
+				225D284C2012516A00FF48D4 /* CirclePickerTests */,
+				225D28572012516A00FF48D4 /* CirclePickerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		225D28372012516A00FF48D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2260125D20175C2C00E52A53 /* heart.png in Resources */,
+				225D28472012516A00FF48D4 /* LaunchScreen.storyboard in Resources */,
+				2260125E20175C2C00E52A53 /* home.png in Resources */,
+				225D286D2012519F00FF48D4 /* CirclePicker.xib in Resources */,
+				225D28442012516A00FF48D4 /* Assets.xcassets in Resources */,
+				2260126220175C2C00E52A53 /* rocket.png in Resources */,
+				225D286F2012553500FF48D4 /* background_grey.jpg in Resources */,
+				2260125F20175C2C00E52A53 /* wifi.png in Resources */,
+				2260126020175C2C00E52A53 /* clock.png in Resources */,
+				2260125C20175C2C00E52A53 /* star.png in Resources */,
+				225D28422012516A00FF48D4 /* Main.storyboard in Resources */,
+				2260126120175C2C00E52A53 /* camera.png in Resources */,
+				2260125B20175C2C00E52A53 /* music.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		225D284B2012516A00FF48D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		225D28562012516A00FF48D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		225D28352012516A00FF48D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22FFC70A2016665100136508 /* CirclePickerDataSource.swift in Sources */,
+				225D28712013788E00FF48D4 /* CirclePickerDelegate.swift in Sources */,
+				225D286B2012518600FF48D4 /* CirclePicker.swift in Sources */,
+				225D283F2012516A00FF48D4 /* ViewController.swift in Sources */,
+				225D283D2012516A00FF48D4 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		225D28492012516A00FF48D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				225D28522012516A00FF48D4 /* CirclePickerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		225D28542012516A00FF48D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				225D285D2012516A00FF48D4 /* CirclePickerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		225D284F2012516A00FF48D4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 225D28382012516A00FF48D4 /* CirclePicker */;
+			targetProxy = 225D284E2012516A00FF48D4 /* PBXContainerItemProxy */;
+		};
+		225D285A2012516A00FF48D4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 225D28382012516A00FF48D4 /* CirclePicker */;
+			targetProxy = 225D28592012516A00FF48D4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		225D28402012516A00FF48D4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				225D28412012516A00FF48D4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		225D28452012516A00FF48D4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				225D28462012516A00FF48D4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		225D285F2012516A00FF48D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		225D28602012516A00FF48D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		225D28622012516A00FF48D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TXY668PRH2;
+				INFOPLIST_FILE = CirclePicker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tim.CirclePicker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		225D28632012516A00FF48D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TXY668PRH2;
+				INFOPLIST_FILE = CirclePicker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tim.CirclePicker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		225D28652012516A00FF48D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TXY668PRH2;
+				INFOPLIST_FILE = CirclePickerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tim.CirclePickerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CirclePicker.app/CirclePicker";
+			};
+			name = Debug;
+		};
+		225D28662012516A00FF48D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TXY668PRH2;
+				INFOPLIST_FILE = CirclePickerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tim.CirclePickerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CirclePicker.app/CirclePicker";
+			};
+			name = Release;
+		};
+		225D28682012516A00FF48D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TXY668PRH2;
+				INFOPLIST_FILE = CirclePickerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tim.CirclePickerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CirclePicker;
+			};
+			name = Debug;
+		};
+		225D28692012516A00FF48D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TXY668PRH2;
+				INFOPLIST_FILE = CirclePickerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tim.CirclePickerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CirclePicker;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		225D28342012516A00FF48D4 /* Build configuration list for PBXProject "CirclePicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				225D285F2012516A00FF48D4 /* Debug */,
+				225D28602012516A00FF48D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		225D28612012516A00FF48D4 /* Build configuration list for PBXNativeTarget "CirclePicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				225D28622012516A00FF48D4 /* Debug */,
+				225D28632012516A00FF48D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		225D28642012516A00FF48D4 /* Build configuration list for PBXNativeTarget "CirclePickerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				225D28652012516A00FF48D4 /* Debug */,
+				225D28662012516A00FF48D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		225D28672012516A00FF48D4 /* Build configuration list for PBXNativeTarget "CirclePickerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				225D28682012516A00FF48D4 /* Debug */,
+				225D28692012516A00FF48D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 225D28312012516A00FF48D4 /* Project object */;
+}
