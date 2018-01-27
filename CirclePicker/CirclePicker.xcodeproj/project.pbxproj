@@ -15,7 +15,6 @@
 		225D28522012516A00FF48D4 /* CirclePickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D28512012516A00FF48D4 /* CirclePickerTests.swift */; };
 		225D285D2012516A00FF48D4 /* CirclePickerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D285C2012516A00FF48D4 /* CirclePickerUITests.swift */; };
 		225D286B2012518600FF48D4 /* CirclePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D286A2012518600FF48D4 /* CirclePicker.swift */; };
-		225D286D2012519F00FF48D4 /* CirclePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 225D286C2012519F00FF48D4 /* CirclePicker.xib */; };
 		225D286F2012553500FF48D4 /* background_grey.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 225D286E2012553500FF48D4 /* background_grey.jpg */; };
 		225D28712013788E00FF48D4 /* CirclePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D28702013788E00FF48D4 /* CirclePickerDelegate.swift */; };
 		2260125B20175C2C00E52A53 /* music.png in Resources */ = {isa = PBXBuildFile; fileRef = 2260125320175C2B00E52A53 /* music.png */; };
@@ -62,7 +61,6 @@
 		225D285C2012516A00FF48D4 /* CirclePickerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclePickerUITests.swift; sourceTree = "<group>"; };
 		225D285E2012516A00FF48D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		225D286A2012518600FF48D4 /* CirclePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclePicker.swift; sourceTree = "<group>"; };
-		225D286C2012519F00FF48D4 /* CirclePicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CirclePicker.xib; sourceTree = "<group>"; };
 		225D286E2012553500FF48D4 /* background_grey.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background_grey.jpg; sourceTree = "<group>"; };
 		225D28702013788E00FF48D4 /* CirclePickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclePickerDelegate.swift; sourceTree = "<group>"; };
 		2260125320175C2B00E52A53 /* music.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = music.png; sourceTree = "<group>"; };
@@ -131,7 +129,6 @@
 				225D286A2012518600FF48D4 /* CirclePicker.swift */,
 				22FFC7092016665100136508 /* CirclePickerDataSource.swift */,
 				225D28402012516A00FF48D4 /* Main.storyboard */,
-				225D286C2012519F00FF48D4 /* CirclePicker.xib */,
 				225D286E2012553500FF48D4 /* background_grey.jpg */,
 				2260125920175C2C00E52A53 /* camera.png */,
 				2260125820175C2C00E52A53 /* clock.png */,
@@ -277,7 +274,6 @@
 				2260125D20175C2C00E52A53 /* heart.png in Resources */,
 				225D28472012516A00FF48D4 /* LaunchScreen.storyboard in Resources */,
 				2260125E20175C2C00E52A53 /* home.png in Resources */,
-				225D286D2012519F00FF48D4 /* CirclePicker.xib in Resources */,
 				225D28442012516A00FF48D4 /* Assets.xcassets in Resources */,
 				2260126220175C2C00E52A53 /* rocket.png in Resources */,
 				225D286F2012553500FF48D4 /* background_grey.jpg in Resources */,

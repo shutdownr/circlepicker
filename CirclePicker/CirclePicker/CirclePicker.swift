@@ -11,10 +11,10 @@ import UIKit
 class CirclePicker: UIView {
     
     // Outlets
-    @IBOutlet private var contentView: UIView!
-    @IBOutlet private var centerView: UIView!
-    @IBOutlet private var backgroundImage: UIImageView!
-    @IBOutlet private var backgroundWidth: NSLayoutConstraint!
+    private var contentView: UIView!
+    private var centerView: UIView!
+    private var backgroundImage: UIImageView!
+    private var backgroundWidth : NSLayoutConstraint!
     
     // Public members
     
@@ -91,12 +91,29 @@ class CirclePicker: UIView {
     private func circlePickerInit()
     {
         bounds = CGRect(x: 0, y: 0, width: 0, height: 0)
-        Bundle.main.loadNibNamed("CirclePicker", owner: self, options: nil)
+        backgroundColor = UIColor.red
+        
+        // Create views
+        contentView = UIView()
+        centerView = UIView()
+        backgroundImage = UIImageView()
+        
+        // Setup view hierarchy
+        centerView.frame.origin = contentView.center
+        contentView.addSubview(centerView)
+        contentView.addSubview(backgroundImage)
         addSubview(contentView)
+        
+        // Add constraints
+        backgroundImage.translatesAutoresizingMaskIntoConstraints = false
+        backgroundWidth = NSLayoutConstraint(item: backgroundImage, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: 0)
+        backgroundImage.addConstraint(backgroundWidth)
+        backgroundImage.addConstraint(NSLayoutConstraint(item: backgroundImage, attribute: .height, relatedBy: .equal, toItem: backgroundImage , attribute: .width, multiplier: 1, constant: 0))
+        contentView.addConstraint(NSLayoutConstraint(item: backgroundImage, attribute: .centerX, relatedBy: .equal, toItem: contentView, attribute: .centerX, multiplier: 1, constant: 0))
+        contentView.addConstraint(NSLayoutConstraint(item: backgroundImage, attribute: .centerY, relatedBy: .equal, toItem: contentView, attribute: .centerY, multiplier: 1, constant: 0))
         
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight,.flexibleWidth]
-        
     }
     
     // Public functions
