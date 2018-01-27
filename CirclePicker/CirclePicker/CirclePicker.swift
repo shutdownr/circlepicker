@@ -13,6 +13,8 @@ class CirclePicker: UIView {
     // Outlets
     @IBOutlet private var contentView: UIView!
     @IBOutlet private var centerView: UIView!
+    @IBOutlet private var backgroundImage: UIImageView!
+    @IBOutlet private var backgroundWidth: NSLayoutConstraint!
     
     // Public members
     
@@ -48,6 +50,15 @@ class CirclePicker: UIView {
             topViewOrigin = topView?.frame.origin
         }
     }
+    // Background image for the picker
+    var background : UIImage?
+    {
+        didSet
+        {
+            backgroundImage.image = background
+        }
+    }
+    
     
     // Private members
     
@@ -56,6 +67,7 @@ class CirclePicker: UIView {
     private var view: UIView?
     private var middle: CGPoint!
     private var topViewOrigin : CGPoint?
+    
     
     // Initializers
     init()
@@ -103,6 +115,18 @@ class CirclePicker: UIView {
         view.addGestureRecognizer(gesture)
     }
     
+    // Removes the picker from its attached view
+    // No further gestures will be recognized
+    func removeFromView()
+    {
+        if let gesture = gesture
+        {
+            view?.removeGestureRecognizer(gesture)
+        }
+        view = nil
+        gesture = nil
+    }
+    
     // Private functions
     
     @objc private func gestureDetected(gesture: UILongPressGestureRecognizer)
@@ -114,6 +138,14 @@ class CirclePicker: UIView {
             middle = pos
             self.frame.origin = pos
             view?.addSubview(self)
+            if background != nil
+            {
+                backgroundImage.alpha = 0
+                backgroundWidth.constant = cellSize*3
+                UIView.animate(withDuration: animationDuration, delay: 0, options: .curveEaseOut, animations: {
+                    self.backgroundImage.alpha = 1
+                }, completion: nil)
+            }
             createImageViews()
         }
             // Called on every touch between start and end of the long-press
@@ -127,7 +159,7 @@ class CirclePicker: UIView {
             // TopView was set. Reset the translation
             if let v = topView
             {
-                UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {
+                UIView.animate(withDuration: animationDuration, delay: 0, options: .curveEaseOut, animations: {
                     v.transform = CGAffineTransform.identity
                 }, completion: nil)
             }
@@ -164,7 +196,7 @@ class CirclePicker: UIView {
             // TopView is set -> Move it above the picker
             if let v = topView
             {
-                UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {
+                UIView.animate(withDuration: animationDuration, delay: 0, options: .curveEaseOut, animations: {
                     
                     let dx = self.middle.x - self.topViewOrigin!.x - self.topView!.frame.width/2
                     let dy = self.middle.y - self.topViewOrigin!.y - self.cellSize*2
@@ -190,6 +222,7 @@ class CirclePicker: UIView {
     {
         let imageView = UIImageView(frame: frame)
         var newImage = image
+        // Resize the image to fit into the circle
         if(resizeImages)
         {
             let newWidth = imageView.frame.width / sqrt(2)
@@ -214,30 +247,35 @@ class CirclePicker: UIView {
     {
         switch animationType {
         case .fade:
+            // Image is transparent before the animation
             image.alpha = 0
+            
+            // Calculate the position for the image
             let angle = 360.0/Double(data.numberOfCells(in: self))*Double(index)
-            var x = CGFloat(0)
-            var y = CGFloat(0)
             let radius = CGFloat(contentView.frame.width + CGFloat(1.1)*cellSize)
             
-            x = radius * CGFloat(sin(degreeToRadians(angle)))
-            y = -radius * CGFloat(cos(degreeToRadians(angle)))
+            let x = radius * CGFloat(sin(degreeToRadians(angle)))
+            let y = -radius * CGFloat(cos(degreeToRadians(angle)))
             
+            // Move the image to the right point
             image.frame.origin = CGPoint(x: -cellSize/2+x, y: -cellSize/2+y)
             
+            // Fade the image in
             UIView.animate(withDuration: animationDuration, delay: 0.1*Double(index), options: .curveEaseInOut, animations: {
                 image.alpha = 1
             }, completion: nil)
         case .unfold:
+            // Move the image to the center
             image.frame.origin = CGPoint(x: -cellSize/2, y: -cellSize/2)
+            
+            // Calculate the position for the image
             let angle = 360.0/Double(data.numberOfCells(in: self))*Double(index)
-            var x = CGFloat(0)
-            var y = CGFloat(0)
             let radius = CGFloat(contentView.frame.width + CGFloat(1.1)*cellSize)
             
-            x = radius * CGFloat(sin(degreeToRadians(angle)))
-            y = -radius * CGFloat(cos(degreeToRadians(angle)))
+            let x = radius * CGFloat(sin(degreeToRadians(angle)))
+            let y = -radius * CGFloat(cos(degreeToRadians(angle)))
             
+            // Move the image to the right point
             UIView.animate(withDuration: animationDuration, delay: 0, options: .curveEaseInOut, animations: {
                 image.transform = CGAffineTransform(translationX: x, y: y)
             }, completion: nil)

@@ -19,10 +19,10 @@ class ViewController: UIViewController, CirclePickerDelegate, CirclePickerDataSo
     @IBOutlet var icon: UIImageView!
     
     private var picker : CirclePicker!
-    private var images : [UIImage]?
-    private var currentImages : [UIImage]?
-    private var icons : [UIImage]?
-    private var currentIcons : [UIImage]?
+    private var images : [UIImage]!
+    private var currentImages : [UIImage]!
+    private var icons : [UIImage]!
+    private var currentIcons : [UIImage]!
     private var size : Float = 64.0
     
     
@@ -54,9 +54,9 @@ class ViewController: UIViewController, CirclePickerDelegate, CirclePickerDataSo
         
         
         images = [image1,image2,image3,image4,image5,image6,image7,image8]
-        currentImages = Array(images!.prefix(numberCtrl.selectedSegmentIndex+1))
+        currentImages = Array(images.prefix(numberCtrl.selectedSegmentIndex+1))
         icons = [icon1,icon2,icon3,icon4,icon5,icon6,icon7,icon8]
-        currentIcons = Array(icons!.prefix(numberCtrl.selectedSegmentIndex+1))
+        currentIcons = Array(icons.prefix(numberCtrl.selectedSegmentIndex+1))
         
         picker = CirclePicker()
         picker.delegate = self
@@ -66,11 +66,14 @@ class ViewController: UIViewController, CirclePickerDelegate, CirclePickerDataSo
         picker.resizeImages = false
         picker.topView = centerLabel
         
+        picker.background = UIImage(named: "pickerBackground.png")
+        
+        
     }
     @IBAction func segmentSelected(_ sender: UISegmentedControl)
     {
-        currentImages = Array(images!.prefix(sender.selectedSegmentIndex+1))
-        currentIcons = Array(icons!.prefix(sender.selectedSegmentIndex+1))
+        currentImages = Array(images.prefix(sender.selectedSegmentIndex+1))
+        currentIcons = Array(icons.prefix(sender.selectedSegmentIndex+1))
     }
     @IBAction func sliderChanged(_ sender: UISlider)
     {
@@ -98,12 +101,12 @@ class ViewController: UIViewController, CirclePickerDelegate, CirclePickerDataSo
     }
     func numberOfCells(in: CirclePicker) -> Int
     {
-        return iconsSwitch.isOn ? currentIcons!.count : currentImages!.count
+        return iconsSwitch.isOn ? currentIcons.count : currentImages.count
     }
     
     func circlePicker(_: CirclePicker, imageForIndex index: Int) -> UIImage
     {
-        return iconsSwitch.isOn ? currentIcons![index] : currentImages![index]
+        return iconsSwitch.isOn ? currentIcons[index] : currentImages[index]
     }
     
     func circlePicker(_ circlePicker: CirclePicker, didEndSelectionAt position: Int)

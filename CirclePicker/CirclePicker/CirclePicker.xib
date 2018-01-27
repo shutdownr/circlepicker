@@ -6,12 +6,15 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CirclePicker" customModule="CirclePicker" customModuleProvider="target">
             <connections>
+                <outlet property="backgroundImage" destination="o1b-to-SVF" id="4Rf-On-9Hh"/>
+                <outlet property="backgroundWidth" destination="NhS-00-LtW" id="a8G-h9-N2t"/>
                 <outlet property="centerView" destination="GwW-fd-TnN" id="izs-sT-KgB"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="b7h-HJ-EcI"/>
             </connections>
@@ -28,8 +31,17 @@
                         <constraint firstAttribute="height" constant="64" id="r4x-vj-pig"/>
                     </constraints>
                 </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="o1b-to-SVF">
+                    <rect key="frame" x="128" y="128" width="0.0" height="0.0"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="o1b-to-SVF" secondAttribute="height" multiplier="1:1" id="LRs-Kx-1mc"/>
+                        <constraint firstAttribute="width" id="NhS-00-LtW"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <constraints>
+                <constraint firstItem="o1b-to-SVF" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="MRR-l7-ZLs"/>
+                <constraint firstItem="o1b-to-SVF" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="apG-ap-66Y"/>
                 <constraint firstItem="GwW-fd-TnN" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="gse-ou-S6r"/>
                 <constraint firstItem="GwW-fd-TnN" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="igy-Ew-mU5"/>
             </constraints>

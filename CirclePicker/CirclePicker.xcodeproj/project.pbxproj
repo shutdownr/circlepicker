@@ -26,6 +26,7 @@
 		2260126020175C2C00E52A53 /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = 2260125820175C2C00E52A53 /* clock.png */; };
 		2260126120175C2C00E52A53 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 2260125920175C2C00E52A53 /* camera.png */; };
 		2260126220175C2C00E52A53 /* rocket.png in Resources */ = {isa = PBXBuildFile; fileRef = 2260125A20175C2C00E52A53 /* rocket.png */; };
+		227ABD60201CAA18009CB237 /* pickerBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 227ABD5F201CAA18009CB237 /* pickerBackground.png */; };
 		22FFC70A2016665100136508 /* CirclePickerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FFC7092016665100136508 /* CirclePickerDataSource.swift */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +73,7 @@
 		2260125820175C2C00E52A53 /* clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clock.png; sourceTree = "<group>"; };
 		2260125920175C2C00E52A53 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		2260125A20175C2C00E52A53 /* rocket.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rocket.png; sourceTree = "<group>"; };
+		227ABD5F201CAA18009CB237 /* pickerBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pickerBackground.png; path = ../../../../Desktop/CirclePicker/CirclePicker/pickerBackground.png; sourceTree = "<group>"; };
 		22FFC7092016665100136508 /* CirclePickerDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclePickerDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -139,6 +141,7 @@
 				2260125A20175C2C00E52A53 /* rocket.png */,
 				2260125420175C2B00E52A53 /* star.png */,
 				2260125720175C2C00E52A53 /* wifi.png */,
+				227ABD5F201CAA18009CB237 /* pickerBackground.png */,
 				225D28432012516A00FF48D4 /* Assets.xcassets */,
 				225D28452012516A00FF48D4 /* LaunchScreen.storyboard */,
 				225D28482012516A00FF48D4 /* Info.plist */,
@@ -278,6 +281,7 @@
 				225D28442012516A00FF48D4 /* Assets.xcassets in Resources */,
 				2260126220175C2C00E52A53 /* rocket.png in Resources */,
 				225D286F2012553500FF48D4 /* background_grey.jpg in Resources */,
+				227ABD60201CAA18009CB237 /* pickerBackground.png in Resources */,
 				2260125F20175C2C00E52A53 /* wifi.png in Resources */,
 				2260126020175C2C00E52A53 /* clock.png in Resources */,
 				2260125C20175C2C00E52A53 /* star.png in Resources */,
