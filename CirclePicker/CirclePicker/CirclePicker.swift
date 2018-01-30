@@ -8,14 +8,8 @@
 
 import UIKit
 
-class CirclePicker: UIView {
-    
-    // Outlets
-    private var contentView: UIView!
-    private var centerView: UIView!
-    private var backgroundImage: UIImageView!
-    private var backgroundWidth : NSLayoutConstraint!
-    
+class CirclePicker: UIView
+{
     // Public members
     
     // The pickers delegate and dataSource
@@ -23,6 +17,16 @@ class CirclePicker: UIView {
     var dataSource : CirclePickerDataSource?
     // specifies the size for the pickers cells
     var cellSize = CGFloat(64)
+    
+    var isActive: Bool
+    {
+        get
+        {
+            return active
+        }
+    }
+    
+    
     // the currently selected cell index. nil if none is selected
     var selectedCellIndex: Int?
     // the duration required for the longPress-gesture
@@ -62,12 +66,19 @@ class CirclePicker: UIView {
     
     // Private members
     
+    // The view hierarchy
+    private var contentView: UIView!
+    private var centerView: UIView!
+    private var backgroundImage: UIImageView!
+    private var backgroundWidth : NSLayoutConstraint!
     private var imageViews : [UIImageView]?
+    
     private var gesture: UILongPressGestureRecognizer!
-    private var view: UIView?
+    // The parent, that the picker is attached to
+    private var parent: UIView?
     private var middle: CGPoint!
     private var topViewOrigin : CGPoint?
-    
+    private var active = false
     
     // Initializers
     init()
@@ -90,8 +101,7 @@ class CirclePicker: UIView {
     
     private func circlePickerInit()
     {
-        bounds = CGRect(x: 0, y: 0, width: 0, height: 0)
-        backgroundColor = UIColor.red
+        bounds = CGRect(x: 0, y: 0, width: 0, height:0)
         
         // Create views
         contentView = UIView()
@@ -122,7 +132,7 @@ class CirclePicker: UIView {
     // It will always be triggered on a long-press-gesture
     func attachToView(_ view: UIView)
     {
-        self.view = view
+        self.parent = view
         view.isUserInteractionEnabled = true
         gesture = UILongPressGestureRecognizer(target: self, action: #selector(gestureDetected))
         if let duration = minimumPressDuration
@@ -138,9 +148,9 @@ class CirclePicker: UIView {
     {
         if let gesture = gesture
         {
-            view?.removeGestureRecognizer(gesture)
+            parent?.removeGestureRecognizer(gesture)
         }
-        view = nil
+        parent = nil
         gesture = nil
     }
     
@@ -151,10 +161,11 @@ class CirclePicker: UIView {
         // First touch - Picker will show up
         if(gesture.state == .began)
         {
-            let pos = gesture.location(in: view)
+            active = true
+            let pos = gesture.location(in: parent)
             middle = pos
             self.frame.origin = pos
-            view?.addSubview(self)
+            parent?.addSubview(self)
             if background != nil
             {
                 backgroundImage.alpha = 0
@@ -164,13 +175,14 @@ class CirclePicker: UIView {
                 }, completion: nil)
             }
             createImageViews()
+            delegate?.didStartSelection?(in: self)
         }
-            // Called on every touch between start and end of the long-press
+        // Called on every touch between start and end of the long-press
         else if(gesture.state == .changed)
         {
-            cellTouched(gesture.location(in: view))
+            cellTouched(gesture.location(in: parent))
         }
-            // Touch has ended. Remove the picker and reset it.
+        // Touch has ended. Remove the picker and reset it.
         else if(gesture.state == .ended)
         {
             // TopView was set. Reset the translation
@@ -180,10 +192,6 @@ class CirclePicker: UIView {
                     v.transform = CGAffineTransform.identity
                 }, completion: nil)
             }
-            if let index = selectedCellIndex
-            {
-                delegate?.circlePicker?(self, didEndSelectionAt: index)
-            }
             if let images = imageViews
             {
                 for image in images
@@ -191,8 +199,15 @@ class CirclePicker: UIView {
                     image.removeFromSuperview()
                 }
             }
+            
             self.removeFromSuperview()
+            
+            if let index = selectedCellIndex
+            {
+                delegate?.circlePicker?(self, didEndSelectionAt: index)
+            }
             selectedCellIndex = nil
+            active = false
         }
     }
     
@@ -215,8 +230,8 @@ class CirclePicker: UIView {
             {
                 UIView.animate(withDuration: animationDuration, delay: 0, options: .curveEaseOut, animations: {
                     
-                    let dx = self.middle.x - self.topViewOrigin!.x - self.topView!.frame.width/2
-                    let dy = self.middle.y - self.topViewOrigin!.y - self.cellSize*2
+                    let dx = self.middle.x - self.topViewOrigin!.x - v.frame.width/2
+                    let dy = self.middle.y - self.topViewOrigin!.y - self.cellSize*1.8 - v.frame.height
                     v.transform = CGAffineTransform(translationX: dx, y: dy)
                 }, completion: nil)
             }
@@ -263,6 +278,17 @@ class CirclePicker: UIView {
     private func animateImage(index: Int, image:UIImageView, data: CirclePickerDataSource)
     {
         switch animationType {
+        case .none:
+            // Calculate the position for the image
+            let angle = 360.0/Double(data.numberOfCells(in: self))*Double(index)
+            let radius = CGFloat(contentView.frame.width + CGFloat(1.1)*cellSize)
+            
+            let x = radius * CGFloat(sin(degreeToRadians(angle)))
+            let y = -radius * CGFloat(cos(degreeToRadians(angle)))
+            
+            // Move the image to the right point
+            image.frame.origin = CGPoint(x: -cellSize/2+x, y: -cellSize/2+y)
+            
         case .fade:
             // Image is transparent before the animation
             image.alpha = 0
@@ -391,7 +417,7 @@ class CirclePicker: UIView {
     
     enum CirclePickerAnimationType
     {
-        case unfold, scatter, fade
+        case unfold, scatter, fade, none
     }
     
 }
@@ -426,5 +452,3 @@ private extension UIView
         return false
     }
 }
-
-

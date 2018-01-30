@@ -13,18 +13,23 @@ class ViewController: UIViewController, CirclePickerDelegate, CirclePickerDataSo
     
     @IBOutlet var centerLabel: UILabel!
     @IBOutlet var sizeLabel: UILabel!
+    
     @IBOutlet var numberCtrl: UISegmentedControl!
+    @IBOutlet var animationCtrl: UISegmentedControl!
     
     @IBOutlet var iconsSwitch: UISwitch!
     @IBOutlet var icon: UIImageView!
+
+    @IBOutlet var picker: CirclePicker!
     
-    private var picker : CirclePicker!
+    //private var picker : CirclePicker!
     private var images : [UIImage]!
     private var currentImages : [UIImage]!
     private var icons : [UIImage]!
     private var currentIcons : [UIImage]!
     private var size : Float = 64.0
     
+
     
     override func viewDidLoad()
     {
@@ -34,14 +39,14 @@ class ViewController: UIViewController, CirclePickerDelegate, CirclePickerDataSo
         view.backgroundColor = UIColor(patternImage: UIImage(named: "background_grey.jpg")!)
         
         
-        let image1 = UIImage.imageWithColor(color: UIColor.red)
-        let image2 = UIImage.imageWithColor(color: UIColor.orange)
-        let image3 = UIImage.imageWithColor(color: UIColor.yellow)
-        let image4 = UIImage.imageWithColor(color: UIColor.green)
-        let image5 = UIImage.imageWithColor(color: UIColor.cyan)
-        let image6 = UIImage.imageWithColor(color: UIColor.blue)
-        let image7 = UIImage.imageWithColor(color: UIColor.magenta)
-        let image8 = UIImage.imageWithColor(color: UIColor.purple)
+        let image1 = UIImage.imageWithColor2(color: UIColor.red)
+        let image2 = UIImage.imageWithColor2(color: UIColor.orange)
+        let image3 = UIImage.imageWithColor2(color: UIColor.yellow)
+        let image4 = UIImage.imageWithColor2(color: UIColor.green)
+        let image5 = UIImage.imageWithColor2(color: UIColor.cyan)
+        let image6 = UIImage.imageWithColor2(color: UIColor.blue)
+        let image7 = UIImage.imageWithColor2(color: UIColor.magenta)
+        let image8 = UIImage.imageWithColor2(color: UIColor.purple)
         
         let icon1 = UIImage(named: "camera.png")!
         let icon2 = UIImage(named: "clock.png")!
@@ -58,7 +63,7 @@ class ViewController: UIViewController, CirclePickerDelegate, CirclePickerDataSo
         icons = [icon1,icon2,icon3,icon4,icon5,icon6,icon7,icon8]
         currentIcons = Array(icons.prefix(numberCtrl.selectedSegmentIndex+1))
         
-        picker = CirclePicker()
+        //picker = CirclePicker()
         picker.delegate = self
         picker.dataSource = self
         picker.attachToView(view)
@@ -67,8 +72,6 @@ class ViewController: UIViewController, CirclePickerDelegate, CirclePickerDataSo
         picker.topView = centerLabel
         
         picker.background = UIImage(named: "pickerBackground.png")
-        
-        
     }
     @IBAction func segmentSelected(_ sender: UISegmentedControl)
     {
@@ -95,6 +98,8 @@ class ViewController: UIViewController, CirclePickerDelegate, CirclePickerDataSo
             picker.animationType = .scatter
         case 2:
             picker.animationType = .fade
+        case 3:
+            picker.animationType = .none
         default:
             break
         }
@@ -183,9 +188,9 @@ class ViewController: UIViewController, CirclePickerDelegate, CirclePickerDataSo
     
 }
 
-extension UIImage
+private extension UIImage
 {
-    class func imageWithColor(color: UIColor, size: CGSize=CGSize(width: 1, height: 1)) -> UIImage
+    class func imageWithColor2(color: UIColor, size: CGSize=CGSize(width: 1, height: 1)) -> UIImage
     {
         UIGraphicsBeginImageContextWithOptions(size, false, 0)
         color.setFill()
