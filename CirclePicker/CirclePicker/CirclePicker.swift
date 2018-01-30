@@ -177,12 +177,12 @@ class CirclePicker: UIView
             createImageViews()
             delegate?.didStartSelection?(in: self)
         }
-        // Called on every touch between start and end of the long-press
+            // Called on every touch between start and end of the long-press
         else if(gesture.state == .changed)
         {
             cellTouched(gesture.location(in: parent))
         }
-        // Touch has ended. Remove the picker and reset it.
+            // Touch has ended. Remove the picker and reset it.
         else if(gesture.state == .ended)
         {
             // TopView was set. Reset the translation
@@ -452,3 +452,4 @@ private extension UIView
         return false
     }
 }
+

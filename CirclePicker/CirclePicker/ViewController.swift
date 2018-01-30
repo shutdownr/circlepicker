@@ -19,7 +19,7 @@ class ViewController: UIViewController, CirclePickerDelegate, CirclePickerDataSo
     
     @IBOutlet var iconsSwitch: UISwitch!
     @IBOutlet var icon: UIImageView!
-
+    
     @IBOutlet var picker: CirclePicker!
     
     //private var picker : CirclePicker!
@@ -29,7 +29,7 @@ class ViewController: UIViewController, CirclePickerDelegate, CirclePickerDataSo
     private var currentIcons : [UIImage]!
     private var size : Float = 64.0
     
-
+    
     
     override func viewDidLoad()
     {
