@@ -356,21 +356,22 @@ class CirclePicker: UIView
     private func cellTouched(_ position: CGPoint)
     {
         let fingerPos = CGPoint(x: position.x-middle.x, y: position.y-middle.y)
-        
-        var i = 0
-        if(centerView.contains(point: fingerPos))
+        if(fingerPos.x < cellSize/2 && fingerPos.x > -cellSize/2 && fingerPos.y < cellSize/2 && fingerPos.y > -cellSize/2)
         {
-            // Touch in the center-view.
+            // Center was touched.
             // No cell is currently selected.
             cellSelected(index: -1)
             selectedCellIndex = nil
             return
         }
+        
+        var i = 0
         if let imageViews = imageViews
         {
             // Check for every image if it contains the position that was touched
             for image in imageViews
             {
+                print(image.frame.origin)
                 if(image.circleContains(point: fingerPos))
                 {
                     // Cell was touched. Call the delegate and set the cell-state to selected
