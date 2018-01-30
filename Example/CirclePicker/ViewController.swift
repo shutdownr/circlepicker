@@ -34,8 +34,7 @@ class ViewController: UIViewController, CirclePickerDelegate, CirclePickerDataSo
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        view.backgroundColor = UIColor(patternImage: UIImage(named: "background_grey.jpg")!)
-        
+        view.backgroundColor = UIColor.lightGray
         
         let image1 = UIImage.imageWithColor2(color: UIColor.red)
         let image2 = UIImage.imageWithColor2(color: UIColor.orange)
