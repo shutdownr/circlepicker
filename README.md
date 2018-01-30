@@ -1,6 +1,6 @@
 <h1>CirclePicker</h1>
 by Tim Kreuzer
-<br><video><source src="https://raw.githubusercontent.com/shutdownr/circlepicker/master/Videos/CirclePickerDemo.mp4"/></video>
+<br><img src="Videos/CirclePickerDemo.gif">
 CirclePicker is a custom UIView. It allows multiple choice selection of different elements  which can be customised by the programmer. Furthermore you can configure CirclePicker for your own needs with multiple parameters.
 
 <h2>Requirements</h2>
