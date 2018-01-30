@@ -20,9 +20,7 @@ class ViewController: UIViewController, CirclePickerDelegate, CirclePickerDataSo
     @IBOutlet var iconsSwitch: UISwitch!
     @IBOutlet var icon: UIImageView!
     
-    @IBOutlet var picker: CirclePicker!
-    
-    //private var picker : CirclePicker!
+    private var picker : CirclePicker!
     private var images : [UIImage]!
     private var currentImages : [UIImage]!
     private var icons : [UIImage]!
@@ -63,7 +61,7 @@ class ViewController: UIViewController, CirclePickerDelegate, CirclePickerDataSo
         icons = [icon1,icon2,icon3,icon4,icon5,icon6,icon7,icon8]
         currentIcons = Array(icons.prefix(numberCtrl.selectedSegmentIndex+1))
         
-        //picker = CirclePicker()
+        picker = CirclePicker()
         picker.delegate = self
         picker.dataSource = self
         picker.attachToView(view)
@@ -86,6 +84,7 @@ class ViewController: UIViewController, CirclePickerDelegate, CirclePickerDataSo
     @IBAction func iconsChanged(_ sender: UISwitch)
     {
         picker.resizeImages = sender.isOn
+        picker.topView = sender.isOn ? icon : centerLabel
     }
     
     @IBAction func animationSelected(_ sender: UISegmentedControl)
