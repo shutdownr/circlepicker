@@ -1,6 +1,6 @@
 <h1>CirclePicker</h1>
 by Tim Kreuzer
-<br><img src="Videos/CirclePickerDemo.gif">
+<br><img src="Videos/CirclePickerDemo.gif" width="200px">
 CirclePicker is a custom UIView. It allows multiple choice selection of different elements  which can be customised by the programmer. Furthermore you can configure CirclePicker for your own needs with multiple parameters.
 
 <h2>Requirements</h2>
@@ -20,4 +20,14 @@ Add the following line in your Podfile:<br>
 <h2>Usage</h2>
 <p>
 Create a new Object of the type CirclePicker. You need to set the dataSource attribute (CirclePickerDataSource-protocol) to fill it with data. Then you can use the method attachToView(_ :) to attach the picker to a certain view. The picker itself will be displayed now. In order to respond to user interaction, you need to set the delegate attribute (CirclePickerDelegate-protocol) which will be called on every interaction.<br>
+Your code should look something like this:<br>
+ <pre>
+ class MyViewController : UIViewController, CirclePickerDelegate, CirclePickerDataSource {
+ ...
+   let picker = CirclePicker()
+   picker.dataSource = self
+   picker.delegate = self
+   picker.attachToView(myView)
+ ...
+  </pre>
 </p>
